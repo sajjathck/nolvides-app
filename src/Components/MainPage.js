@@ -25,8 +25,8 @@ function MainPage() {
   }
 
   return (
-    <div className="container-fluid bg-light">
-      <div className="row g-4 ">
+    <div className="container-fluid">
+      <div className="row  ">
         <div className="head mt-5 d-flex justify-content-center">
           <h1 className="text-success"> No Olvides</h1>
         </div>
@@ -35,10 +35,10 @@ function MainPage() {
         </div>
         <div className="row  justify-content-center my-5">
           <div className="col-md-6 p-5 rounded-5 shadow border ">
-            <h3>Add Notes</h3>
+            <h3 className="mb-3 font-weight-bold">Add Your Notes Below</h3>
             <div class="mb-3">
               <input
-                className="shadow rounded-5 form-control"
+                className="shadow-3 rounded-3 form-control"
                 type="text"
                 id="title"
                 placeHolder="Title Here "
@@ -48,7 +48,7 @@ function MainPage() {
             </div>
             <div className="mb-3">
               <textarea
-                className="shadow rounded-4 form-control"
+                className="shadow-3 rounded-3 form-control"
                 rows="3"
                 type="text"
                 id="description"
@@ -59,7 +59,7 @@ function MainPage() {
                 }}
               ></textarea>
             </div>
-            <div className="mb-3">
+            <div className="mt-5">
               <button
                 className="shadow btn btn-outline-dark"
                 type="submit"
@@ -70,18 +70,18 @@ function MainPage() {
             </div>
           </div>
         </div>
-        <div className="row row-cols-3">
+        <div className="row row-cols-3 mb-5 mx-auto">
           {notes.map((e) => (
             <div className="card-group">
-              <div className="card bg-primary bg-opacity-10 rounded-4 shadow-1 border-0 mt-3">
-                <div className="card-body ">
+              <div className="card bg-success bg-opacity-20 rounded-4 shadow-1 border-0 mt-3">
+                <div className="card-body text-light">
                   <button
-                    className="btn btn-close position-absolute top-0 end-0 m-2"
+                    className="btn btn-close btn-close-danger btn-danger position-absolute top-0 end-0 m-2"
                     type="input"
                     onClick={() => remove(e.key)}
                   />
-                  <h2 className="card-title"> {e.title}</h2>
-                  <p className="card-text"> {e.des}</p>
+                  <h3 className="card-title"> {e.title}</h3>
+                  <h6 className="card-text"> {e.des}</h6>
                 </div>
               </div>
             </div>
